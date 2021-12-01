@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="accounts-LEONARDBISE",
-    version="0.0.1",
+    version="0.0.2",
     author="Léonard Bise",
     author_email="author@example.com",
     description="This is a package used for a tutorial",
@@ -23,4 +23,7 @@ setuptools.setup(
     package_dir={"": "."},
     packages=setuptools.find_packages(where="."),
     python_requires=">=3.7",
+    install_requires=[
+            'numpy'
+        ]
 )

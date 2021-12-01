@@ -1,0 +1,16 @@
+Tox runs test on package with different python version:
+Run: tox with a tox.ini at the root
+Build package: python3 -m build
+Creates:
+dist/
+  example_package_YOUR_USERNAME_HERE-0.0.1-py3-none-any.whl
+  example_package_YOUR_USERNAME_HERE-0.0.1.tar.gz
+
+Push testpypi
+Create file ~/.pypirc with:
+[testpypi]
+  username = __token__
+  password = pypi-AgENdGVzdC5weXBpLm9yZwIkMTQ1YzBjMzAtMGQxNC00ZDJkLTljY2EtNTg2YjJlNzcwNzMzAAIleyJwZXJtaXNzaW9ucyI6ICJ1c2VyIiwgInZlcnNpb24iOiAxfQAABiAoEp__NDrWD2McUdJfuiC-pBXuG6Sa7UOYFyqtVJdK9A
+
+python3 -m pip install --upgrade twine
+python3 -m twine upload --repository testpypi dist/*

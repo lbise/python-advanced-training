@@ -3,7 +3,7 @@ import sys
 import os
 import datetime
 
-sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)), '..'))
+#sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)), '..'))
 
 from account.external.agios import AgiosBankAccount
 from account.external.blocked import BlockedBankAccount

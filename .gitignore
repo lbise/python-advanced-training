@@ -1,4 +1,7 @@
 __pycache__
 *.swp
-env
+*env*
 .ipynb_checkpoints
+*/.tox
+*/dist
+*/*egg-info*
