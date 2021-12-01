@@ -1,0 +1,77 @@
+action: GLOB, msg: packaging
+cwd: /home/13lbise/python_training/bank_exercise
+cmd: /home/13lbise/python_training/env/bin/python3 setup.py sdist --formats=zip --dist-dir /home/13lbise/python_training/bank_exercise/.tox/dist
+running sdist
+running egg_info
+creating tutorial_bank_account_leo.egg-info
+writing tutorial_bank_account_leo.egg-info/PKG-INFO
+writing dependency_links to tutorial_bank_account_leo.egg-info/dependency_links.txt
+writing top-level names to tutorial_bank_account_leo.egg-info/top_level.txt
+writing manifest file 'tutorial_bank_account_leo.egg-info/SOURCES.txt'
+/home/13lbise/python_training/env/lib/python3.8/site-packages/setuptools_scm/integration.py:16: RuntimeWarning: 
+ERROR: setuptools==44.0.0 is used in combination with setuptools_scm>=6.x
+
+Your build configuration is incomplete and previously worked by accident!
+
+
+This happens as setuptools is unable to replace itself when a activated build dependency
+requires a more recent setuptools version
+(it does not respect "setuptools>X" in setup_requires).
+
+
+setuptools>=31 is required for setup.cfg metadata support
+setuptools>=42 is required for pyproject.toml configuration support
+
+Suggested workarounds if applicable:
+ - preinstalling build dependencies like setuptools_scm before running setup.py
+ - installing setuptools_scm using the system package manager to ensure consistency
+ - migrating from the deprecated setup_requires mechanism to pep517/518
+   and using a pyproject.toml to declare build dependencies
+   which are reliably pre-installed before running the build tools
+
+  warnings.warn(
+listing git files failed - pretending there aren't any
+reading manifest file 'tutorial_bank_account_leo.egg-info/SOURCES.txt'
+writing manifest file 'tutorial_bank_account_leo.egg-info/SOURCES.txt'
+running check
+warning: check: missing required meta-data: url
+
+creating tutorial-bank-account-leo-0.0.1
+creating tutorial-bank-account-leo-0.0.1/account
+creating tutorial-bank-account-leo-0.0.1/account/external
+creating tutorial-bank-account-leo-0.0.1/tutorial_bank_account_leo.egg-info
+copying files to tutorial-bank-account-leo-0.0.1...
+copying README.md -> tutorial-bank-account-leo-0.0.1
+copying pyproject.toml -> tutorial-bank-account-leo-0.0.1
+copying setup.py -> tutorial-bank-account-leo-0.0.1
+copying ./account/__init__.py -> tutorial-bank-account-leo-0.0.1/./account
+copying ./account/internal.py -> tutorial-bank-account-leo-0.0.1/./account
+copying ./account/external/__init__.py -> tutorial-bank-account-leo-0.0.1/./account/external
+copying ./account/external/agios.py -> tutorial-bank-account-leo-0.0.1/./account/external
+copying ./account/external/blocked.py -> tutorial-bank-account-leo-0.0.1/./account/external
+copying tutorial_bank_account_leo.egg-info/PKG-INFO -> tutorial-bank-account-leo-0.0.1/tutorial_bank_account_leo.egg-info
+copying tutorial_bank_account_leo.egg-info/SOURCES.txt -> tutorial-bank-account-leo-0.0.1/tutorial_bank_account_leo.egg-info
+copying tutorial_bank_account_leo.egg-info/dependency_links.txt -> tutorial-bank-account-leo-0.0.1/tutorial_bank_account_leo.egg-info
+copying tutorial_bank_account_leo.egg-info/top_level.txt -> tutorial-bank-account-leo-0.0.1/tutorial_bank_account_leo.egg-info
+Writing tutorial-bank-account-leo-0.0.1/setup.cfg
+creating /home/13lbise/python_training/bank_exercise/.tox/dist
+creating '/home/13lbise/python_training/bank_exercise/.tox/dist/tutorial-bank-account-leo-0.0.1.zip' and adding 'tutorial-bank-account-leo-0.0.1' to it
+adding 'tutorial-bank-account-leo-0.0.1'
+adding 'tutorial-bank-account-leo-0.0.1/account'
+adding 'tutorial-bank-account-leo-0.0.1/tutorial_bank_account_leo.egg-info'
+adding 'tutorial-bank-account-leo-0.0.1/PKG-INFO'
+adding 'tutorial-bank-account-leo-0.0.1/pyproject.toml'
+adding 'tutorial-bank-account-leo-0.0.1/README.md'
+adding 'tutorial-bank-account-leo-0.0.1/setup.cfg'
+adding 'tutorial-bank-account-leo-0.0.1/setup.py'
+adding 'tutorial-bank-account-leo-0.0.1/account/external'
+adding 'tutorial-bank-account-leo-0.0.1/account/internal.py'
+adding 'tutorial-bank-account-leo-0.0.1/account/__init__.py'
+adding 'tutorial-bank-account-leo-0.0.1/account/external/agios.py'
+adding 'tutorial-bank-account-leo-0.0.1/account/external/blocked.py'
+adding 'tutorial-bank-account-leo-0.0.1/account/external/__init__.py'
+adding 'tutorial-bank-account-leo-0.0.1/tutorial_bank_account_leo.egg-info/dependency_links.txt'
+adding 'tutorial-bank-account-leo-0.0.1/tutorial_bank_account_leo.egg-info/PKG-INFO'
+adding 'tutorial-bank-account-leo-0.0.1/tutorial_bank_account_leo.egg-info/SOURCES.txt'
+adding 'tutorial-bank-account-leo-0.0.1/tutorial_bank_account_leo.egg-info/top_level.txt'
+removing 'tutorial-bank-account-leo-0.0.1' (and everything under it)
