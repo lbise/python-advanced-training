@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import logging
+import asyncio
 
 from chessmaster import Chessmaster
 from player import Player
@@ -15,15 +16,29 @@ def setup_logger(name, level):
     sim.addHandler(strm)
     sim.setLevel(level)
 
+master_is_done = asyncio.Event()
+
 class Simulator(object):
-    def main(self):
-        master = Chessmaster()
-        players = [Player('Player1'), Player('Player2'), Player('Player3')]
-        round_ = Round(master, players)
-        for j in range(2):
-            L.info(f'== Starting round {j} ==')
-            for i, _ in enumerate(players):
-                round_.play(i)
+    def __init__(self):
+        self.nb_rounds = 2
+        self.nb_players = 3
+        self.master = Chessmaster()
+        self.players = [Player(f'Player{i}') for i in range(self.nb_players)]
+        self.rounds = [Round(self.master, self.players) for i in range(self.nb_rounds)]
+
+    async def main(self):
+        L.info('*** Start simulation')
+        for round_id, round in enumerate(self.rounds):
+            for player_id, player in enumerate(self.players):
+                # Authorize player to play beginning of first round
+                if round_id == 0:
+                    player.master_is_done.set()
+                await round.play(player_id)
+
+        for round_id, round in enumerate(self.rounds):
+            await asyncio.wait(round.tasks)
+
+        L.info('*** End simulation')
 
 if __name__ == '__main__':
     setup_logger('__main__', logging.DEBUG)
@@ -32,4 +47,4 @@ if __name__ == '__main__':
     setup_logger('round', logging.DEBUG)
 
     s = Simulator()
-    s.main()
+    asyncio.run(s.main())
