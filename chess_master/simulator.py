@@ -40,11 +40,14 @@ class Simulator(object):
 
         L.info('*** End simulation')
 
+async def run_sim():
+    s = Simulator()
+    await s.main()
+
 if __name__ == '__main__':
     setup_logger('__main__', logging.DEBUG)
     setup_logger('chessmaster', logging.DEBUG)
     setup_logger('player', logging.DEBUG)
     setup_logger('round', logging.DEBUG)
 
-    s = Simulator()
-    asyncio.run(s.main())
+    asyncio.run(run_sim())
